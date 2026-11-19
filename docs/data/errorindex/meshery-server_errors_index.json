@@ -106,7 +106,16 @@
       "numericCode": "1009",
       "severity": "fatal",
       "shortDescription": "ListenAndServe Error",
-      "longDescription": "ListenAndServe Error:"
+      "longDescription": "ListenAndServe Error:",
+      "probableCause": [
+        "port 9081 is already in use by another process, check for the process",
+        "Insufficient permissions to bind to the port or network address"
+      ],
+      "suggestedRemediation": [
+        "Check for processes running on port 9081",
+        "Kill conflicting process",
+        "change the listening port to some other vacant port"
+      ]
     },
     {
       "code": "meshery-server-1010",

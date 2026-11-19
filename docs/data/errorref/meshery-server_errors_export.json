@@ -81,8 +81,8 @@
         "severity": "Fatal",
         "long_description": "ListenAndServe Error: ",
         "short_description": "ListenAndServe Error",
-        "probable_cause": "",
-        "suggested_remediation": ""
+        "probable_cause": "port is already occupied by some other process\ncheck for insufficient permissions",
+        "suggested_remediation": "Check for processes running on port 9081(on linux check via sudo ss -ltnp | grep 9081) and kill conflicting process(s)\n change the listening port to some other vacant port"
       },
       "1010": {
         "name": "ErrCleaningUpLocalProviderCode",

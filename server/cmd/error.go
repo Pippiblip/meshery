@@ -58,7 +58,7 @@ func ErrInvalidURLSkippingProvider(url string) error {
 }
 
 func ErrListenAndServe(err error) error {
-	return errors.New(ErrListenAndServeCode, errors.Fatal, []string{"ListenAndServe Error"}, []string{"ListenAndServe Error: ", err.Error()}, []string{}, []string{})
+	return errors.New(ErrListenAndServeCode, errors.Fatal, []string{"ListenAndServe Error"}, []string{"ListenAndServe Error: ", err.Error()}, []string{"port is already occupied by some other process\ncheck for insufficient permissions"}, []string{"Check for processes running on port 9081(on linux check via sudo ss -ltnp | grep 9081) and kill conflicting process(s)\n change the listening port to some other vacant port"})
 }
 
 func ErrCleaningUpLocalProvider(err error) error {
